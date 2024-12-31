@@ -1,0 +1,130 @@
+:root {
+  --background: #f0f2f5;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --border: #ddd;
+  --accent: #4f46e5;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  --background: #1a1a1a;
+  --surface: #2d2d2d;
+  --text: #ffffff;
+  --border: #404040;
+  --accent: #6366f1;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+nav {
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: 0 2px 4px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tema-knapp {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tema-knapp:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.bento-item {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px var(--shadow);
+}
+
+.bento-item.stor {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 400px;
+}
+
+.bento-item h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.bento-item p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  background: var(--surface);
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-item.stor {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 300px;
+  }
+  .container {
+    padding: 1rem;
+  }
+}

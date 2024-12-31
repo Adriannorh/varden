@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boligprisstatistikk - VARDEN</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Boligprisstatistikk</h1>
+      <button class="tema-knapp" onclick="byttTema()">Endre tema</button>
+    </nav>
+
+    <div class="container">
+      <select id="region-velger"></select>
+
+      <div class="bento-grid">
+        <div class="bento-item stor">
+          <h2>Prisutvikling</h2>
+          <canvas id="pris-graf"></canvas>
+        </div>
+        <div class="bento-item stor">
+          <h2>Endringer</h2>
+          <canvas id="endrings-graf"></canvas>
+        </div>
+        <div class="bento-item">
+          <h2>Gjennomsnittspris</h2>
+          <p id="gjennomsnittspris">-</p>
+        </div>
+        <div class="bento-item">
+          <h2>Kvm. pris</h2>
+          <p id="kvadratmeterpris">-</p>
+        </div>
+        <div class="bento-item">
+          <h2>Endring siste måned</h2>
+          <p id="manedlig-endring">-</p>
+        </div>
+        <div class="bento-item">
+          <h2>Endring siste år</h2>
+          <p id="arlig-endring">-</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
